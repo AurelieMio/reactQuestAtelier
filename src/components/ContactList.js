@@ -1,4 +1,7 @@
-contacts = [
+import React , {Component} from 'react';
+import Contacts from './Contacts';
+import './ContactList.css'
+const contacts = [
     {
         firstName:"Louella",
         lastName:"Barnett",
@@ -25,3 +28,16 @@ contacts = [
         image:"https://randomuser.me/api/portraits/women/18.jpg",
     },
 ]
+
+const ContactList = () => (
+    <ul>
+        {contacts.map(item =>(
+            <li key= {item.Lastname}>
+            <Contacts firstName={item.firstName} 
+            lastName={item.lastName} 
+            image = {item.image} />
+            </li>))};
+    </ul>
+)
+
+export default ContactList;
