@@ -1,12 +1,20 @@
-import React from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-function App() {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      working: props.false
+    };
+    this.state.working = this.state.working.bind(this)
+    this.setState = this.setState.bind(this);
+  }
+  render(){
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={logo} className="App-logo" className={this.props.working ? "workingLogo": "notWorkingLogo"} alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -18,9 +26,14 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+        </header>
+        <button
+        onClick={() => this.setState(state => ({working: !state.working }))}
+        >
+        </button>
+      
     </div>
-  );
+  );}
 }
 
 export default App;
