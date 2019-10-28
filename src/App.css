@@ -2,15 +2,7 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-}
-.workingLogo{
-  transform: rotate(20deg);
-}
-.notWorkingLogo{
-  transform: rotate(-20deg);
-}
+
 
 .App-header {
   background-color: #282c34;
