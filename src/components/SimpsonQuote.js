@@ -6,7 +6,7 @@ class SimpsonQuote extends Component{
     constructor(props){
         super(props);
         this.state = {
-            quote: "quoteexample"
+            quote: null
         }
     }
     getSimpsonQuote = () => {
@@ -25,7 +25,9 @@ class SimpsonQuote extends Component{
     render(){
         return (
                 <div>
-                    <QuoteCard simpson = {this.state.quote}></QuoteCard>
+                    { this.state.quote 
+                    ? <QuoteCard simpson = {this.state.quote}></QuoteCard> 
+                    : <p> No quote yet </p>}
                     <button onClick={(e)=> this.getSimpsonQuote()}>New Quote</button>
                     <p></p>
                 </div>
